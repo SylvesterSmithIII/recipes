@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <theah>
+            <tr>
+                <th class="col">Name</th>
+                <th class="col">Picture</th>
+            </tr>
+        </theah>
+        <tbody>
+            {% for recipe in saved_recipes %}
+                <tr>
+                    <td>{{ recipe['name'] }}</td>
+                    <td><img src="{{ recipe['image_link'] }}" style="width: 200px; height: 200px;"></img></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

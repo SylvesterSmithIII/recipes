@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="col">Name</th>
+                <th class="col">Picture</th>
+                <th class="col">Youtube Link</th>
+                <th class="col">Instructions</th>
+                <th class="col">Ingredients</th>
+                <th class="col">Measurments</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg">
+                <td>{{ recipe["name"] }}</td>
+                <td><img src="{{ recipe['image'] }}" style="width: 200px; height: 200px;"></td>
+                <td><a href="{{ recipe['youtube_link'] }}" targer="_blank">{{ recipe["youtube_link"] }}</a></td>
+                <td>{{ recipe["instructions"] }}</td>
+                <td><ul>
+                    {% for ingredient in recipe["ingredients"] %}
+                        <li>{{ ingredient }}</li>
+                    {% endfor %}
+                </ul></td>
+                <td><ul>
+                    {% for measurment in recipe["measurments"] %}
+                        <li>{{ measurment }}</li>
+                    {% endfor %}
+                </ul></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="/add-meal" method="POST">
+        <button type="submit">Add Meal</button>
+    </form>
+{% endblock %}
