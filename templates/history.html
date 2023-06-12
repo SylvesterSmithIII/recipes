@@ -5,18 +5,18 @@
 {% endblock %}
 
 {% block main %}
-    <table class="table">
+    <table class="min-w-full">
         <theah>
             <tr>
-                <th class="col">Name</th>
-                <th class="col">Picture</th>
+                <th class="py-2 px-4 bg-gray-200">Name</th>
+                <th class="py-2 px-4 bg-gray-200">Picture</th>
             </tr>
         </theah>
-        <tbody>
+        <tbody class="columns-2">
             {% for recipe in saved_recipes %}
                 <tr>
-                    <td>{{ recipe['name'] }}</td>
-                    <td><img src="{{ recipe['image_link'] }}" style="width: 200px; height: 200px;"></img></td>
+                    <td class="py-2 px-4 border">{{ recipe['name'] }}</td>
+                    <td class="py-2 px-4 border"><img src="{{ recipe['image_link'] }}" style="width: 200px; height: 200px;"></img></td>
                 </tr>
             {% endfor %}
         </tbody>

@@ -124,6 +124,3 @@ def history():
         print("No history Exception")
 
     return render_template("history.html", saved_recipes=saved_recipes)
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
