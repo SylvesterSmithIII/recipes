@@ -6,7 +6,7 @@ from flask import jsonify
 
 from helpers import login_required, random_recipe
 # Configure application
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
