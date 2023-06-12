@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+
+        <title>CookBookMark: {% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body>
+
+        <nav class="min-w-full max-h-10 inline">
+            <div>
+                <a href="/"><span class="text-red-300">Cook</span><span class="text-blue-300">Book</span><span class="text-green-300">Mark</span></a>
+                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+                <div class="" id="navbar">
+                    {% if session["user_id"] %}
+                        <ul class="">
+                            <li class=""><a class="" href="/quote">Quote</a></li>
+                            <li class=""><a class="" href="/buy">Buy</a></li>
+                            <li class=""><a class="" href="/sell">Sell</a></li>
+                            <li class=""><a class="" href="/history">History</a></li>
+                        </ul>
+                        <ul class="">
+                            <li class=""><a class="" href="/logout">Log Out</a></li>
+                        </ul>
+                    {% else %}
+                        <ul class="">
+                            <li class=""><a class="" href="/register">Register</a></li>
+                            <li class=""><a class="" href="/login">Log In</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class=""></div>
+            </div>
+        </nav>
+
+        <main class="">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="">
+            Data provided by <a href="https://iexcloud.io/">IEX</a>
+        </footer>
+
+    </body>
+
+</html>

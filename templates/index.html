@@ -5,22 +5,22 @@
 {% endblock %}
 
 {% block main %}
-    <table class="table">
+    <table class="">
         <thead>
             <tr>
-                <th class="col">Name</th>
-                <th class="col">Picture</th>
-                <th class="col">Youtube Link</th>
-                <th class="col">Instructions</th>
-                <th class="col">Ingredients</th>
-                <th class="col">Measurments</th>
+                <th class="">Name</th>
+                <th class="">Picture</th>
+                <th class="">Youtube Link</th>
+                <th class="">Instructions</th>
+                <th class="">Ingredients</th>
+                <th class="">Measurments</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="bg">
+            <tr class="">
                 <td>{{ recipe["name"] }}</td>
                 <td><img src="{{ recipe['image'] }}" style="width: 200px; height: 200px;"></td>
-                <td><a href="{{ recipe['youtube_link'] }}" targer="_blank">{{ recipe["youtube_link"] }}</a></td>
+                <td><a href="{{ recipe['youtube_link'] }}" target="_blank">{{ recipe["youtube_link"] }}</a></td>
                 <td>{{ recipe["instructions"] }}</td>
                 <td><ul>
                     {% for ingredient in recipe["ingredients"] %}
