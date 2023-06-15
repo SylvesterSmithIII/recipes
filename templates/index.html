@@ -5,37 +5,18 @@
 {% endblock %}
 
 {% block main %}
-    <table class="w-4/5 ">
-        <thead class="bg-gray-50 border-b-2 border-gray-200">
-            <tr class="">
-                <th class="p-3 text-sm tracking-wide text-left font-semibold">Name</th>
-                <th class="p-3 text-sm tracking-wide text-left font-semibold">Picture</th>
-                <th class="p-3 text-sm tracking-wide text-left font-semibold">Youtube Link</th>
-                <th class="p-3 text-sm tracking-wide text-left font-semibold">Instructions</th>
-                <th class="p-3 text-sm tracking-wide text-left font-semibold">Ingredients</th>
-                <th class="p-3 text-sm tracking-wide text-left font-semibold">Measurments</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="whitespace-pre">
-                <td>{{ recipe["name"] }}</td>
-                <td><img src="{{ recipe['image'] }}"></td>
-                <td><a href="{{ recipe['youtube_link'] }}" target="_blank">{{ recipe["youtube_link"] }}</a></td>
-                <td class="overscroll-y-auto">{{ recipe["instructions"] }}</td>
-                <td><ul>
-                    {% for ingredient in recipe["ingredients"] %}
-                        <li>{{ ingredient }}</li>
-                    {% endfor %}
-                </ul></td>
-                <td><ul>
-                    {% for measurment in recipe["measurments"] %}
-                        <li>{{ measurment }}</li>
-                    {% endfor %}
-                </ul></td>
-            </tr>
-        </tbody>
-    </table>
-    <form action="/add-meal" method="POST">
-        <button type="submit" class="mt-4 bg-sky-500 transition hover:bg-sky-600 text-white font-bold py-2 px-4 rounded">Add Meal</button>
-    </form>
+    <div class="flex w-10/12 mx-auto min-h-screen bg-pallete-1 border-8 border-white">
+        <div class="w-10/12 mx-auto p-6 bg-pallete-5">
+            <div class="w-10/12 h-24 my-6 mx-auto">
+                <h1 class="w-full h-full flex text-4xl font-extrabold font-sans justify-center items-center flex-wrap text-center">{{ recipe["name"] }}</h1>
+            </div>
+            <div class="flex w-10/12 mx-auto p-6 columns-2 justify-around">
+                <div class="bg-white w-2/5 h-full">
+                    <div class=""></div>
+                    <div class=""></div>
+                </div>
+                <div class="bg-white w-2/5 h-full"></div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -116,9 +116,9 @@ def add_meal():
     added = "Adding recipe successful"
     return redirect("/")
 
-@app.route("/history")
+@app.route("/saved-recipes")
 @login_required
-def history():
+def saved_recipes():
     try:
         saved_recipes = db.execute("SELECT saved_recipes.name, saved_recipes.image_link FROM saved_recipes JOIN meals ON saved_recipes.name = meals.name WHERE meals.user_id = ?", session["user_id"])
     except Exception:
