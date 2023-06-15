@@ -6,12 +6,12 @@
 
 {% block main %}
     <table class="min-w-full">
-        <theah>
+        <thead class="bg-gray-500">
             <tr>
-                <th class="py-2 px-4 bg-gray-200">Name</th>
-                <th class="py-2 px-4 bg-gray-200">Picture</th>
+                <th class="py-2 px-4 text-teal-100">Name</th>
+                <th class="py-2 px-4">Picture</th>
             </tr>
-        </theah>
+        </thead>
         <tbody>
             {% for recipe in saved_recipes %}
                 <tr>

@@ -95,6 +95,7 @@ def logout():
 def index():
     recipe = random_recipe()
     session["recipe"] = recipe
+    print(recipe['instructions'])
     return render_template("index.html", recipe=recipe)
 
 @app.route("/add-meal", methods=["POST"])
@@ -124,6 +125,11 @@ def history():
         print("No history Exception")
 
     return render_template("history.html", saved_recipes=saved_recipes)
+
+@app.route("/meal")
+@login_required
+def meal():
+    return render_template("meal.html")
 
 if __name__ == '__main__':
 	app.run(debug=True)

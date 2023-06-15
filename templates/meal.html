@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+        
 
-</head>
-<body>
-   
-</body>
+        <title>Test Page</title>
+    </head>
+    <body>
+        <nav class="realtive min-w-full container p-6 bg-sky-100/70">
+            <div class="flex items-center justify-between">
+                <div class="pt-2">
+                    <a href="/" class="text-5xl font-bold font-serif hover:drop-shadow-lg transition"><span class="text-red-300 hover:shadow-black">Cook</span><span class="text-blue-300 hover:shadow-blue-300/50">Book</span><span class="text-green-300 hover:shadow-green-300/50">Mark</span></a>
+                </div>
+                <div class="hidden md:flex space-x-6 text-gray-500">
+                    <a href="#" class="hover:text-black hover:-translate-y-2  ease-in transition">Pricing</a>
+                    <a href="#" class="hover:text-black hover:-translate-y-2  ease-in transition">Product</a>
+                    <a href="#" class="hover:text-black hover:-translate-y-2  ease-in transition">About Us</a>
+                    <a href="#" class="hover:text-black hover:-translate-y-2  ease-in transition">Careers</a>
+                    <a href="#" class="hover:text-black hover:-translate-y-2  ease-in transition">Community</a>
+                </div>
+            </div>
+        </nav>
+        <aside></aside>
+    </body>
 </html>
