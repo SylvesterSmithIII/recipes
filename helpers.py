@@ -58,3 +58,21 @@ def random_recipe():
         "measurments": meas
     }
     return recipe
+
+def embeded_yt(link):
+    counter = 0
+    video_id = ""
+    for char in link:
+        counter += 1
+        if counter > 32:
+            video_id += char
+    
+    new_link = f"https://www.youtube.com/embed/{video_id}"
+    return new_link
+
+def ings_meas(ings, meas):
+    list = []
+    for ing, mea in zip(ings, meas):
+        list.append(f"{ing} -> {mea}")
+
+    return list

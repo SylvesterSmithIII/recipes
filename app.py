@@ -4,7 +4,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask import jsonify
 
-from helpers import login_required, random_recipe
+from helpers import login_required, random_recipe, embeded_yt, ings_meas
 # Configure application
 app = Flask(__name__)
 
@@ -94,9 +94,11 @@ def logout():
 @login_required
 def index():
     recipe = random_recipe()
+    recipe["youtube_link"] = embeded_yt(recipe["youtube_link"])
+    ingredients = ings_meas(recipe["ingredients"], recipe["measurments"])
+    recipe["instructions"].lstrip()
     session["recipe"] = recipe
-    print(recipe['instructions'])
-    return render_template("index.html", recipe=recipe)
+    return render_template("index.html", recipe=recipe, ingredients=ingredients)
 
 @app.route("/add-meal", methods=["POST"])
 def add_meal():
